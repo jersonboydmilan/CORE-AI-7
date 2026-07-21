@@ -1,7 +1,8 @@
 # Research Status
 
-At-a-glance maturity model for CORE-AI/7. Full claim-by-claim detail:
-[EVIDENCE-MAP.md](EVIDENCE-MAP.md).
+At-a-glance maturity model for CORE-AI/7. Full claim-by-claim detail (E0–E6
+per claim): [evidence/CLAIMS-REGISTER.md](evidence/CLAIMS-REGISTER.md).
+One-page summary: [EVIDENCE-MAP.md](EVIDENCE-MAP.md).
 
 ```
 ┌─────────────────────────────────────────┐

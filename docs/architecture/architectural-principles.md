@@ -1,6 +1,8 @@
 # Architectural Principles
 
-Each principle below is a design commitment. The **Evidence class** line
+Layer references use the canonical model in
+[CORE-AI-7-SPECIFICATION.md](CORE-AI-7-SPECIFICATION.md). Each principle
+below is a design commitment. The **Evidence class** line
 states, honestly, whether the principle is currently a design intent or has
 supporting empirical evidence — see
 [../EVIDENCE-MAP.md](../EVIDENCE-MAP.md) for the full claim table.

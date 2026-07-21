@@ -17,3 +17,9 @@ implying a level of public reproducibility that does not exist — see
 Where a specific count is safe to publish, it appears in
 [../../benchmarks/README.md](../../benchmarks/README.md) with full
 methodology context rather than as an isolated number.
+
+Claim/evidence IDs: [C-001, C-004](../../docs/evidence/CLAIMS-REGISTER.md#core-ai-7-c-001)
+(dependency audit, representation correctness),
+[C-005](../../docs/evidence/CLAIMS-REGISTER.md#core-ai-7-c-005) (storage
+crash/recovery), [C-011](../../docs/evidence/CLAIMS-REGISTER.md#core-ai-7-c-011)
+(concurrency/cascade containment). All rated E3 — internally validated.

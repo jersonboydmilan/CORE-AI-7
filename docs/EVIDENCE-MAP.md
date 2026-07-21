@@ -1,54 +1,64 @@
 # Evidence Map
 
-Every claim CORE-AI/7 makes publicly is listed here with the design it
-maps to, its evidence category, whether public evidence exists, and its
-honest status. `IMPLEMENTED — PRIVATE` and `TESTED — PRIVATE` are never
-represented as `PUBLICLY REPRODUCIBLE`.
+**This is a high-level index.** The source of truth for individual claims
+is [evidence/CLAIMS-REGISTER.md](evidence/CLAIMS-REGISTER.md); underlying
+evidence is [evidence/EVIDENCE-REGISTRY.md](evidence/EVIDENCE-REGISTRY.md)
+and [evidence/BENCHMARK-REGISTRY.md](evidence/BENCHMARK-REGISTRY.md). This
+page summarizes those registries against the canonical layer model in
+[architecture/CORE-AI-7-SPECIFICATION.md](architecture/CORE-AI-7-SPECIFICATION.md).
 
-## Status values
+## Evidence level scale (E0–E6)
 
-```
-DOCUMENTED
-DESIGNED
-IMPLEMENTED — PRIVATE
-TESTED — PRIVATE
-SANITIZED EVIDENCE AVAILABLE
-SCENARIO-VALIDATED
-INDEPENDENTLY REPRODUCED
-PRODUCTION VALIDATED
-```
+This repository previously used an informal status vocabulary
+(`DOCUMENTED`, `IMPLEMENTED — PRIVATE`, `SCENARIO-VALIDATED`, etc.). That
+vocabulary has been superseded by the E0–E6 scale used throughout the
+claims and evidence registries, to keep one consistent maturity scale
+across the repository:
 
-## Claims
+| Level | Name |
+|---|---|
+| E0 | Conceptual |
+| E1 | Designed |
+| E2 | Implemented |
+| E3 | Internally validated |
+| E4 | Publicly reproducible |
+| E5 | Independently validated |
+| E6 | Production validated |
 
-| Claim | Design | Evidence Category | Public Evidence | Status |
-|---|---|---|---|---|
-| Local, dynamic-graph automatic differentiation, gradients verified against numerical differentiation | L4 (Reasoning/Primitives) | Unit-test suite | Sanitized test-count summary | TESTED — PRIVATE |
-| Transformer-style sequence model trainable end-to-end on local CPU compute | L4 | Training run + benchmark | Sanitized throughput summary | SANITIZED EVIDENCE AVAILABLE |
-| Native local-compute acceleration path as an alternative substrate to a general numerical library | L1 (Computation) | Benchmark comparison | Sanitized throughput summary | SANITIZED EVIDENCE AVAILABLE |
-| Crash-safe durable storage: write-ahead log with fsync-before-acknowledge and checksum-verified recovery | L3 (Memory & Context) | Fault-injection test suite | Methodology + sanitized summary | SCENARIO-VALIDATED |
-| Approximate nearest-neighbor retrieval index built from scratch (no third-party ANN library) | L3 | Recall/latency benchmark vs. brute-force ground truth | Sanitized recall/latency summary | SANITIZED EVIDENCE AVAILABLE |
-| Deletion handling that does not require a full index rebuild per delete | L3 | Structural test + benchmark | Methodology public, detailed results private | TESTED — PRIVATE |
-| Offline retrieval-augmented generation pipeline, zero required network calls | L5 (Orchestration) | End-to-end evaluation dataset | Sanitized quality-metric summary | SANITIZED EVIDENCE AVAILABLE |
-| Dependency-aware multi-agent scheduling with cascade failure containment | L6 (Coordination) | Scenario test suite | Methodology public | SCENARIO-VALIDATED |
-| Hallucination / grounding evaluation gate | L7 (Governance & Audit) | Adversarial evaluation set | Sanitized summary | SANITIZED EVIDENCE AVAILABLE |
-| Regression gate against a checked-in quality baseline | L7 | Automated gate, run per build | Sanitized pass/fail summary | SANITIZED EVIDENCE AVAILABLE |
-| Tamper-evident audit logging via hash-chained records | L7 | Structural verification test | Methodology public | TESTED — PRIVATE |
-| Zero required outbound network dependency across all layers | Cross-cutting (sovereignty) | Dependency-surface audit | Documented policy | DOCUMENTED |
-| Independent third-party reproduction of any result above | — | — | — | not established |
-| Production-scale deployment validation | — | — | — | not established |
+No claim in this repository is currently above **E3**.
+
+## Claim summary
+
+| Claim ID | Layer | Claim | Status |
+|---|---|---|---|
+| [C-001](evidence/CLAIMS-REGISTER.md#core-ai-7-c-001) | L1 | No required outbound network dependency for core execution | E3 |
+| [C-002](evidence/CLAIMS-REGISTER.md#core-ai-7-c-002) | L1 | Local model inference, no cloud inference path | E3 |
+| [C-003](evidence/CLAIMS-REGISTER.md#core-ai-7-c-003) | L2 | Knowledge/data locality — local ingestion and embedding | E3 |
+| [C-004](evidence/CLAIMS-REGISTER.md#core-ai-7-c-004) | L2 | Round-trip correct, deterministic tokenization/embedding | E3 |
+| [C-005](evidence/CLAIMS-REGISTER.md#core-ai-7-c-005) | L3 | Crash-safe durable memory with defined recovery | E3 (detail private) |
+| [C-006](evidence/CLAIMS-REGISTER.md#core-ai-7-c-006) | L3 | Approximate retrieval recall vs. exact ground truth | E3 |
+| [C-007](evidence/CLAIMS-REGISTER.md#core-ai-7-c-007) | L3 | Context-assembly provenance recording | E2 |
+| [C-008](evidence/CLAIMS-REGISTER.md#core-ai-7-c-008) | L4 | Reasoning treats context as untrusted, no remote model dependency | E2 |
+| [C-009](evidence/CLAIMS-REGISTER.md#core-ai-7-c-009) | L4/L5 | Grounded generation, zero hallucination on adversarial probe set | E3 |
+| [C-010](evidence/CLAIMS-REGISTER.md#core-ai-7-c-010) | L5 | Workflow recovery — retry/backoff, failure escalation | E2 |
+| [C-011](evidence/CLAIMS-REGISTER.md#core-ai-7-c-011) | L6 | Acyclic task graphs, cascade-cancellation containment | E3 |
+| [C-012](evidence/CLAIMS-REGISTER.md#core-ai-7-c-012) | L6 | Session isolation and divergence detection | E1 |
+| [C-013](evidence/CLAIMS-REGISTER.md#core-ai-7-c-013) | L7 | Governance gate before persistence/surfacing | E3 |
+| [C-014](evidence/CLAIMS-REGISTER.md#core-ai-7-c-014) | L7 | Tamper-evident hash-chained audit logging | E3 |
+| [C-015](evidence/CLAIMS-REGISTER.md#core-ai-7-c-015) | L7 | Regression gate vs. checked-in baseline | E3 |
+| [C-016](evidence/CLAIMS-REGISTER.md#core-ai-7-c-016) | Cross-cutting | Recovery addressed per layer | E2 (varies) |
+| — | — | Independent third-party reproduction of any claim above | Not established |
+| — | — | Production-scale deployment validation | Not established |
 
 ## How to read this table
 
-- `DESIGNED` means the property is an architectural intent with no
-  implementation evidence cited here.
-- `IMPLEMENTED — PRIVATE` / `TESTED — PRIVATE` mean the property has a
-  private implementation and private test evidence, but nothing publicly
-  reproducible.
-- `SANITIZED EVIDENCE AVAILABLE` means a summary exists under
-  [../evidence/](../evidence/) or [../../benchmarks/](../../benchmarks/)
-  that does not expose private implementation.
-- `SCENARIO-VALIDATED` means the claim passed the full validation chain in
-  [validation/VALIDATION-METHODOLOGY.md](validation/VALIDATION-METHODOLOGY.md)
-  at least once, under laboratory conditions.
-- `INDEPENDENTLY REPRODUCED` and `PRODUCTION VALIDATED` are not currently
-  used for any claim in this repository.
+- Layer letters (L1–L7) follow the canonical specification, not the
+  original informal naming — see
+  [architecture/ARCHITECTURE-VERSION-MATRIX.md](architecture/ARCHITECTURE-VERSION-MATRIX.md)
+  for what changed.
+- `IMPLEMENTED — PRIVATE` / `TESTED — PRIVATE` from the prior vocabulary
+  map to E2/E3 respectively and are never treated as equivalent to E4
+  (publicly reproducible).
+- Detail on methodology, limitations, and what each claim does *not*
+  establish lives in the claims register, not here — this page is
+  intentionally a summary.

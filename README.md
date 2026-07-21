@@ -20,6 +20,34 @@ research questions the program investigates, the methodology used to
 validate the private implementation, sanitized evidence, failure taxonomy,
 architecture decision records, known limitations, and the research roadmap.
 
+## Research Traceability
+
+This repository records the relationship between:
+
+```
+RESEARCH THESIS → ARCHITECTURE → IMPLEMENTATION REQUIREMENTS →
+PRIVATE IMPLEMENTATION → CONTROLLED VALIDATION → EVIDENCE →
+LIMITATIONS → FUTURE REPRODUCTION
+```
+
+Every public claim carries a stable ID and an evidence level (E0–E6); no
+claim is published above the level its evidence actually supports.
+
+| Document | Purpose |
+|---|---|
+| [docs/architecture/CORE-AI-7-SPECIFICATION.md](docs/architecture/CORE-AI-7-SPECIFICATION.md) | Canonical seven-layer architecture |
+| [docs/implementation/RESEARCH-TO-IMPLEMENTATION-MAP.md](docs/implementation/RESEARCH-TO-IMPLEMENTATION-MAP.md) | Requirement → capability → validation → evidence |
+| [docs/evidence/CLAIMS-REGISTER.md](docs/evidence/CLAIMS-REGISTER.md) | Every public claim, rated E0–E6 |
+| [docs/evidence/EVIDENCE-REGISTRY.md](docs/evidence/EVIDENCE-REGISTRY.md) | Evidence artifacts behind each claim |
+| [docs/evidence/BENCHMARK-REGISTRY.md](docs/evidence/BENCHMARK-REGISTRY.md) | Performance results with full methodology context |
+| [docs/reproducibility/REPRODUCE.md](docs/reproducibility/REPRODUCE.md) | What is and isn't reproducible today |
+| [docs/failures/FAILURE-CASE-INDEX.md](docs/failures/FAILURE-CASE-INDEX.md) | Specific investigated failure cases |
+| [docs/implementation/PRIVATE-IMPLEMENTATION-ATTESTATION.md](docs/implementation/PRIVATE-IMPLEMENTATION-ATTESTATION.md) | What the private implementation's existence does and does not establish |
+
+**The implementation repository is private.** Independent reproduction of
+any claim in this repository has not yet been established — see
+[docs/reproducibility/REPRODUCE.md](docs/reproducibility/REPRODUCE.md).
+
 ## The Problem
 
 Modern AI applications are typically assembled from opaque, remotely-hosted
@@ -58,31 +86,38 @@ AUDIT
 RECOVERY
 ```
 
+This pipeline is the research narrative — *why* each concern matters. The
+canonical, versioned architecture that governs implementation and evidence
+mapping is the seven-layer model below; see
+[docs/architecture/CORE-AI-7-SPECIFICATION.md](docs/architecture/CORE-AI-7-SPECIFICATION.md#relationship-to-the-research-thesis)
+for how the two relate.
+
 ## Architecture
 
-CORE-AI/7 defines seven conceptual layers, from raw compute to governed and
-audited intelligence:
+CORE-AI/7 defines seven layers, from local compute to governed and audited
+intelligence, plus recovery as a cross-cutting property of every layer
+rather than an eighth layer:
 
 ```
-COMPUTATION
+L1  COMPUTE & RUNTIME
     ↓
-MEMORY
+L2  KNOWLEDGE & DATA
     ↓
-RETRIEVAL
+L3  MEMORY & RETRIEVAL
     ↓
-REASONING
+L4  REASONING
     ↓
-AGENTS
+L5  ORCHESTRATION
     ↓
-GOVERNANCE
+L6  AGENT COORDINATION
     ↓
-AUDIT
-    ↓
-RECOVERY
+L7  GOVERNANCE & AUDIT
 ```
 
-See [docs/architecture/system-overview.md](docs/architecture/system-overview.md)
-for the full layer breakdown and [docs/architecture/architectural-principles.md](docs/architecture/architectural-principles.md)
+Canonical definition, full scope per layer, and the recovery model:
+[docs/architecture/CORE-AI-7-SPECIFICATION.md](docs/architecture/CORE-AI-7-SPECIFICATION.md).
+See also [docs/architecture/system-overview.md](docs/architecture/system-overview.md)
+and [docs/architecture/architectural-principles.md](docs/architecture/architectural-principles.md)
 for the design principles behind it.
 
 ## Research Areas
@@ -111,8 +146,11 @@ verification. Full methodology:
 ## Evidence
 
 Evidence is published at the strongest level actually supported — never
-higher. See [docs/EVIDENCE-MAP.md](docs/EVIDENCE-MAP.md) for the claim →
-evidence → status table, and [evidence/](evidence/) for sanitized summaries.
+higher. See [docs/evidence/CLAIMS-REGISTER.md](docs/evidence/CLAIMS-REGISTER.md)
+for every claim rated E0–E6, [docs/evidence/EVIDENCE-REGISTRY.md](docs/evidence/EVIDENCE-REGISTRY.md)
+and [docs/evidence/BENCHMARK-REGISTRY.md](docs/evidence/BENCHMARK-REGISTRY.md)
+for the artifacts behind them, [docs/EVIDENCE-MAP.md](docs/EVIDENCE-MAP.md)
+for a one-page summary, and [evidence/](evidence/) for sanitized summaries.
 
 ## Current Status
 
@@ -139,6 +177,8 @@ for the full accounting.
 ## Roadmap
 
 Active and planned research directions: [roadmap/README.md](roadmap/README.md).
+Evolution of the research program itself (distinct from document changes):
+[RESEARCH-CHANGELOG.md](RESEARCH-CHANGELOG.md).
 
 ## Public / Private Boundary
 

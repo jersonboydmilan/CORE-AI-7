@@ -19,10 +19,13 @@ private-implementation release schedule.
 - Expanding the validated environment-class matrix beyond the current
   single hardware tier.
 - Expanding evaluation corpora and adversarial probe sets for the
-  governance/hallucination gate (L7).
+  governance/hallucination gate (L7 Governance & Audit).
 - Multi-process / multi-reader coordination research for the memory layer
-  (L3), currently single-writer by design.
+  (L3 Memory & Retrieval), currently single-writer by design.
 - Vector quantization and memory-constrained-corpus research for L3.
+- Dedicated public evidence for session isolation / divergence detection
+  (L6 Agent Coordination) — currently E1, designed only; see
+  [docs/evidence/CLAIMS-REGISTER.md](../docs/evidence/CLAIMS-REGISTER.md#core-ai-7-c-012).
 
 ## Future research directions
 
@@ -37,4 +40,5 @@ private-implementation release schedule.
 ## Status discipline
 
 Nothing on this roadmap should be read as validated or shipped until it
-appears with a status in [docs/EVIDENCE-MAP.md](../docs/EVIDENCE-MAP.md).
+appears with an evidence level in
+[docs/evidence/CLAIMS-REGISTER.md](../docs/evidence/CLAIMS-REGISTER.md).

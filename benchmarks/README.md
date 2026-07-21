@@ -1,5 +1,9 @@
 # Benchmarks
 
+**Canonical registry:** [docs/evidence/BENCHMARK-REGISTRY.md](../docs/evidence/BENCHMARK-REGISTRY.md)
+carries the same entries with stable benchmark IDs (BM-001–BM-004) and is
+the version to cite. This page is the narrative/human-readable form.
+
 Every public benchmark entry follows this template:
 
 ```text
@@ -26,7 +30,7 @@ VALIDATION PERFORMED — DETAILED RESULTS PRIVATE
 
 ## Sanitized results
 
-### Local compute substrate comparison (L1)
+### Local compute substrate comparison (L1) — [BM-001](../docs/evidence/BENCHMARK-REGISTRY.md#core-ai-7-bm-001)
 
 - **Scenario:** dense matrix multiplication throughput across candidate
   local compute substrates.
@@ -49,7 +53,7 @@ VALIDATION PERFORMED — DETAILED RESULTS PRIVATE
 - **Limitations:** single hardware class tested; large-matrix, GPU, and
   distributed regimes not covered.
 
-### Approximate nearest-neighbor retrieval (L3)
+### Approximate nearest-neighbor retrieval (L3) — [BM-002](../docs/evidence/BENCHMARK-REGISTRY.md#core-ai-7-bm-002)
 
 - **Scenario:** recall and latency of the from-scratch approximate
   retrieval index vs. exact brute-force search, at fixed corpus size.
@@ -67,10 +71,12 @@ VALIDATION PERFORMED — DETAILED RESULTS PRIVATE
   the index sustained sub-millisecond query latency at the tested corpus
   scale.
 - **Limitations:** single corpus scale and dimensionality tested; recall
-  behavior under index compaction and high delete fraction is validated
-  functionally but not benchmarked here.
+  behavior under index compaction and high delete fraction is an
+  acknowledged architectural tradeoff, not yet scenario-validated or
+  benchmarked — see
+  [docs/failures/FAILURE-CASE-INDEX.md#core-ai-7-fc-004](../docs/failures/FAILURE-CASE-INDEX.md#core-ai-7-fc-004).
 
-### Offline retrieval-augmented generation pipeline (L5/L7)
+### Offline retrieval-augmented generation pipeline (L4/L5) — [BM-003](../docs/evidence/BENCHMARK-REGISTRY.md#core-ai-7-bm-003)
 
 - **Scenario:** end-to-end retrieval and answer-quality evaluation over a
   fixed local document corpus, including an adversarial hallucination
@@ -94,7 +100,7 @@ VALIDATION PERFORMED — DETAILED RESULTS PRIVATE
 - **Limitations:** small fixed corpus; a production-scale corpus and a
   live local inference backend in the loop are not covered by this run.
 
-### Durable storage crash recovery (L3)
+### Durable storage crash recovery (L3) — [BM-004](../docs/evidence/BENCHMARK-REGISTRY.md#core-ai-7-bm-004)
 
 - **Scenario:** interrupted-write and corruption recovery under the
   write-ahead-log durability mechanism.

@@ -1,5 +1,10 @@
 # Failure Taxonomy
 
+**General categories.** For specific investigated instances, see
+[../failures/FAILURE-CASE-INDEX.md](../failures/FAILURE-CASE-INDEX.md).
+Layer references follow [CORE-AI-7-SPECIFICATION.md](../architecture/CORE-AI-7-SPECIFICATION.md)
+(L3 = Memory & Retrieval, L6 = Agent Coordination).
+
 CORE-AI/7 treats failure as a designed-for condition, not an unmodeled
 exception. Each category below is investigated using the conceptual model:
 
@@ -72,10 +77,12 @@ back to memory, retrieved again with higher apparent authority, and
 amplified across agents until the memory substrate is untrustworthy.
 CORE-AI/7's architectural response is discussed layer-by-layer in
 [../architecture/boundaries.md](../architecture/boundaries.md) — the
-short version is that write-back to memory is gated by governance (L7),
-provenance is recorded at the point of context assembly (L3), and agents
-exchange typed messages rather than shared mutable state (L6), so no
-single hop in the cascade is unmonitored.
+short version is that write-back to memory is gated by governance (L7
+Governance & Audit), provenance is recorded at the point of context
+assembly (L3 Memory & Retrieval), and agents exchange typed messages
+rather than shared mutable state (L6 Agent Coordination), so no single hop
+in the cascade is unmonitored. A specific investigated case:
+[FC-003](../failures/FAILURE-CASE-INDEX.md#core-ai-7-fc-003).
 
 ## Degraded operation
 
@@ -87,5 +94,6 @@ rather than an undefined one.
 
 Evidence for how thoroughly each category has been exercised against the
 private implementation is tracked in
+[../evidence/CLAIMS-REGISTER.md](../evidence/CLAIMS-REGISTER.md) and
 [../EVIDENCE-MAP.md](../EVIDENCE-MAP.md). This document describes the
 research categories, not the private implementation's mechanisms.

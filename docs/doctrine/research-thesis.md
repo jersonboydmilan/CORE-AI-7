@@ -53,9 +53,20 @@ At each stage, the research asks what changes when the stage is required to
 run under local control and be independently inspectable, and what
 architectural property is necessary (not merely convenient) to make that
 true. The seven-layer reference architecture in
-[../architecture/system-overview.md](../architecture/system-overview.md) is
-the current answer; it is treated as a hypothesis under ongoing validation,
-not a finished result.
+[../architecture/CORE-AI-7-SPECIFICATION.md](../architecture/CORE-AI-7-SPECIFICATION.md)
+is the current answer; it is treated as a hypothesis under ongoing
+validation, not a finished result.
+
+This nine-stage pipeline is the research narrative — it names *why* each
+concern matters, in the order a request naturally flows through a system.
+It predates, and uses different vocabulary from, the canonical
+implementation-layer specification (L1 Compute & Runtime through L7
+Governance & Audit, with Recovery cross-cutting). The two are not in
+tension: CONTEXT/MEMORY/RETRIEVAL here correspond to L2/L3, REASONING to
+L4, AGENTS to L5/L6, GOVERNANCE/AUDIT to L7, and RECOVERY to the
+cross-cutting recovery model. Where precision matters — evidence mapping,
+implementation scope — the canonical specification governs; see
+[../architecture/CORE-AI-7-SPECIFICATION.md#relationship-to-the-research-thesis](../architecture/CORE-AI-7-SPECIFICATION.md#relationship-to-the-research-thesis).
 
 ## What this thesis does not claim
 

@@ -1,5 +1,8 @@
 # Boundaries
 
+Layer names follow [CORE-AI-7-SPECIFICATION.md](CORE-AI-7-SPECIFICATION.md)
+(L3 = Memory & Retrieval, L6 = Agent Coordination).
+
 ## Trust boundaries
 
 Every layer transition in CORE-AI/7 is a trust boundary, not just a
