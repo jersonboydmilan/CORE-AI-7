@@ -23,9 +23,19 @@ private-implementation release schedule.
 - Multi-process / multi-reader coordination research for the memory layer
   (L3 Memory & Retrieval), currently single-writer by design.
 - Vector quantization and memory-constrained-corpus research for L3.
-- Dedicated public evidence for session isolation / divergence detection
-  (L6 Agent Coordination) — currently E1, designed only; see
-  [docs/evidence/CLAIMS-REGISTER.md](../docs/evidence/CLAIMS-REGISTER.md#core-ai-7-c-012).
+
+## Deprioritized
+
+- **Session isolation / divergence detection (L6 Agent Coordination,
+  [C-012](../docs/evidence/CLAIMS-REGISTER.md#core-ai-7-c-012)).**
+  Currently E1 — designed only, no implementation or validation evidence
+  exists. This is explicitly deprioritized relative to the items in
+  Active/Planned above: cascade-cancellation containment (C-011, E3) is
+  judged the higher-value coordination-layer investment right now, since
+  it addresses the context-corruption cascade directly. C-012 will not
+  move past E1 until it is scoped as its own work item with a defined
+  validation scenario — it is listed here so its status is visible, not
+  silently dropped, and so it isn't mistaken for near-term work.
 
 ## Future research directions
 

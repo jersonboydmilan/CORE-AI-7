@@ -71,6 +71,18 @@ rather than left ambiguous — where dedicated public evidence does not yet
 exist. See the "Claims Downgraded or Clarified" section of the associated
 audit report.
 
+## 2026-07-21 — C-012 explicitly deprioritized
+
+Session isolation / divergence detection (L6 Agent Coordination) was the
+weakest-attested claim in scope (E1, designed only, no evidence entry).
+Rather than fabricate an evidence entry to close the gap, it was moved to
+an explicit "Deprioritized" section in `roadmap/README.md`, with the
+reasoning stated (C-011 cascade-cancellation containment is judged the
+higher-value L6 investment, since it directly addresses the
+context-corruption cascade). Cross-referenced from the claims register,
+implementation map, and evidence-map summary so the status is visible
+everywhere it appears, not silently dropped.
+
 ## Future milestones (not yet reached)
 
 - Independent reproduction of any claim by a third party.

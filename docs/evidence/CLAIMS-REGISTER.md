@@ -197,6 +197,11 @@ detection between cooperating agents.
 **Limitations.** Designed scope per
 [../architecture/CORE-AI-7-SPECIFICATION.md](../architecture/CORE-AI-7-SPECIFICATION.md);
 implementation and validation status not yet documented publicly.
+Explicitly deprioritized relative to other L6 work — see
+[../../roadmap/README.md](../../roadmap/README.md#deprioritized) — in
+favor of C-011 (cascade-cancellation containment), which more directly
+addresses the context-corruption cascade. Not scheduled to move past E1
+until scoped as its own work item.
 **Does NOT establish.** That divergence detection is implemented or
 tested in the current reference build. Stated conservatively pending
 confirmation.

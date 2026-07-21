@@ -42,7 +42,7 @@ No claim in this repository is currently above **E3**.
 | [C-009](evidence/CLAIMS-REGISTER.md#core-ai-7-c-009) | L4/L5 | Grounded generation, zero hallucination on adversarial probe set | E3 |
 | [C-010](evidence/CLAIMS-REGISTER.md#core-ai-7-c-010) | L5 | Workflow recovery — retry/backoff, failure escalation | E2 |
 | [C-011](evidence/CLAIMS-REGISTER.md#core-ai-7-c-011) | L6 | Acyclic task graphs, cascade-cancellation containment | E3 |
-| [C-012](evidence/CLAIMS-REGISTER.md#core-ai-7-c-012) | L6 | Session isolation and divergence detection | E1 |
+| [C-012](evidence/CLAIMS-REGISTER.md#core-ai-7-c-012) | L6 | Session isolation and divergence detection | E1 — deprioritized |
 | [C-013](evidence/CLAIMS-REGISTER.md#core-ai-7-c-013) | L7 | Governance gate before persistence/surfacing | E3 |
 | [C-014](evidence/CLAIMS-REGISTER.md#core-ai-7-c-014) | L7 | Tamper-evident hash-chained audit logging | E3 |
 | [C-015](evidence/CLAIMS-REGISTER.md#core-ai-7-c-015) | L7 | Regression gate vs. checked-in baseline | E3 |
