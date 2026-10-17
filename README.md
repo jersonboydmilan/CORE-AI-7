@@ -196,6 +196,10 @@ evidence. This repository exposes the research and evidence necessary for
 technical understanding without exposing the private implementation or
 sensitive infrastructure.
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=jersonboydmilan/CORE-AI-7&type=Date)](https://star-history.com/#jersonboydmilan/CORE-AI-7&Date)
+
 ## License
 
 Documentation and research artifacts in this repository are released under
