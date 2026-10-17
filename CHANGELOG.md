@@ -6,6 +6,12 @@ All notable changes to this repository. Format follows
 research program itself (as opposed to document changes), see
 [RESEARCH-CHANGELOG.md](RESEARCH-CHANGELOG.md).
 
+## [Unreleased]
+
+### Added
+
+- Star history chart in the README.
+
 ## [0.2.0] — 2026-07-21
 
 Research traceability, evidence registry, reproducibility, and
